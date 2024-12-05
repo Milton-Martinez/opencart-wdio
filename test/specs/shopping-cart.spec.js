@@ -1,4 +1,4 @@
-import { homepage } from "../page";
+import { homepage, navbar, shop } from "../page";
 
 describe('OZCART: SHOPPING CART TESTS', () => {
     
@@ -7,6 +7,17 @@ describe('OZCART: SHOPPING CART TESTS', () => {
     })
 
     it('Shopping flow', async () => {
-        // await $$('gLFyf');
+        //buying items
+        await navbar.goToShopScarves();
+        await shop.buyAItem(1);
+        await shop.buyAItem(0);
+        
+        //buying items
+        await navbar.goToShopJewellery();
+        await shop.buyAItem(1);
+
+        //except
+        await browser.pause(9000);
+
     });
 });
