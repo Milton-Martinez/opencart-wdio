@@ -11,13 +11,10 @@ describe('OZCART: SHOPPING CART TESTS', () => {
         await navbar.goToShopScarves();
         await shop.buyAItem(1);
         await shop.buyAItem(0);
-        
-        //buying items
-        await navbar.goToShopJewellery();
-        await shop.buyAItem(1);
-
         //except
-        await browser.pause(9000);
+        await shop.clickCartButton();
+        await shop.checkTotalInCart();
+        // await browser.pause(10000);
 
     });
 });
